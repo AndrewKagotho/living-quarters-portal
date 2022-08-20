@@ -1,0 +1,249 @@
+.lordGridContainer {width: 100%;
+  display: grid;
+  grid-template-rows: repeat(5, 95px);
+  grid-template-columns: 25% auto 25%;
+  grid-gap: 20px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lordItem1, .lordItem2, .lordItem3, .lordItem4, .lordItem5 {
+  /* border: 1px solid black; */
+  background-color: #FFF;
+  box-shadow: 0 0 5px #BBB;
+  position: relative;
+}
+.lordItem1 { grid-row: 1/4; }
+.lordItem2 { grid-row: 1/2; }
+.lordItem3 { grid-row: 1/6; }
+.lordItem4 { grid-row: 2/6; }
+.lordItem5 { grid-row: 4/6; }
+.landlordListings {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.landlordListings:hover {
+  overflow: auto;
+}
+.landlordListings h2 {
+  width: 75%;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: hsl(190, 100%, 25%);
+  margin: 20px 0 2px 0;
+  position: relative;
+  left: 15px;
+  /* border: 1px solid black; */
+}
+.landlordListings ul {
+  margin: 0;
+  padding: 10px 0 0 0;
+  list-style-type: none;
+  position: relative;
+  /* border: 1px solid red; */
+}
+.landlordListings li {
+  width: 100%;
+  height: 57px;
+  margin: 15px 0;
+  position: relative;
+  /* border: 1px solid black; */
+}
+.landlordListings li:hover {
+  background-color: #EEE;
+}
+.landlordListings li img {
+  width: 80px;
+  height: 100%;
+  position: relative;
+  left: 15px;
+}
+.landlordListings li span:nth-child(2) {
+  font-size: .9rem;
+  color: hsl(190, 100%, 25%);
+  position: absolute;
+  top: 2px;
+  left: 105px;
+}
+.landlordListings li span:nth-child(3) {
+  font-size: .8rem;
+  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 105px;
+  transform: translateY(-50%);
+}
+.landlordListings li span:nth-child(4)::before {
+  content: 'Vacancies: ';
+}
+.landlordListings li span:nth-child(4) {
+  font-size: .8rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 2px;
+  right: 15px;
+}
+.landlordListings li span:nth-child(5)::before {
+  content: 'Price: ';
+}
+.landlordListings li span:nth-child(5) {
+  font-size: .8rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 2px;
+  left: 105px;
+}
+.landlordListings li span:nth-child(5)::after {
+  content: '/-';
+}
+.landlordInformationCentre {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.landlordInformationCentre h2 {
+  width: 75%;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: hsl(190, 100%, 25%);
+  margin: 20px 0 2px 0;
+  position: relative;
+  left: 15px;
+}
+.landlordInfoDash {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  position: absolute;
+  bottom: 35%;
+  right: 15px;
+  /* border: 1px solid red; */
+}
+.landlordInfoDash span {
+  font-size: .9rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.landlordInfoDash span em {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: normal;
+  display: inline-block;
+  color: hsl(190, 100%, 25%);
+  position: relative;
+  transform: translateY(10%);
+}
+.todayLandlord {
+  font-size: .9rem;
+  font-weight: 400;
+  position: absolute;
+  top: 5%;
+  right: 15px;
+}
+.landlordSearch {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+.landlordSearch h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: hsl(190, 100%, 25%);
+  margin: 20px 0 10px 0;
+  position: relative;
+  left: 15px;
+}
+.filterSearch {
+  position: relative;
+  /* border: 1px solid black; */
+}
+.filterSearch form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filterSearch div {
+  width: 100%;
+  padding: 10px 0;
+  /* border: 1px solid red; */
+}
+.filterSearch div label {
+  position: relative;
+  left: 15px;
+}
+.filterSearch div select {
+  border: none;
+  border-bottom: 1px solid black;
+  position: absolute;
+  left: 30%;
+}
+.filterSearch div select:focus {
+  outline: none;
+  border-bottom: 2px solid hsl(190, 100%, 25%);
+}
+.filterSearch form label:nth-child(1) {
+  font-size: .9rem;
+  color: hsl(190, 100%, 25%);
+}
+.filterSearch button {
+  width: 80px;
+  height: 20px;
+  font-size: .7rem;
+  border: none;
+  color: #FFF;
+  background-color: hsl(190, 100%, 25%);
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.searchResults {
+  /* border: 1px solid black; */
+}
+.columnFieldsLandlord {
+  width: 100%;
+  height: 30px;
+  font-size: .9rem;
+  font-weight: 500;
+  margin-top: 20px;
+  color: hsl(190, 100%, 25%);
+  background-color: #EEE;
+  position: relative;
+  /* border: 1px solid blue; */
+}
+.searchResults ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.searchResults li {
+  font-size: .9rem;
+  font-weight: 400;
+  height: 30px;
+  color:hsl(190, 100%, 25%);
+  position: relative;
+  /* border: 1px solid red; */
+}
+.searchResults ul li:nth-child(even) {
+  background-color: #F3F3F3;
+}
+.searchResults li span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translateY(-50%);
+}
+.searchResults li span:nth-child(2), .columnFieldsLandlord span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  transform: translateY(-50%);
+}
+.searchResults li span:nth-child(3), .columnFieldsLandlord span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translateY(-50%);
+}

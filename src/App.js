@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainLanding from './views'
+import BrowseNav from './layouts/BrowseNav'
+import Browse from './views/browse/Browse'
+import TenantNav from './layouts/TenantNav'
+import TenantHome from './views/tenant/Home'
+import TenantProfile from './views/tenant/Profile'
+import TenantMessages from './views/tenant/Messages'
+import LandlordNav from './layouts/LandlordNav'
+import LandlordDashboard from './views/landlord/Dashboard'
+import LandlordManagement from './views/landlord/Management'
+import LandlordProfile from './views/landlord/Profile'
+import LandlordMessages from './views/landlord/Messages'
 
-function App() {
+import './styles/tenant.css'
+import './styles/residence.css'
+import './styles/myaccount.css'
+import './styles/profile.css'
+import './styles/messages.css'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainLanding/>}/>
+        <Route path='/browse' element={<BrowseNav/>}>
+          <Route index element={<Browse/>}/>
+        </Route>
+        <Route path='/tenant' element={<TenantNav/>}>
+          <Route index element={<TenantHome/>}/>
+          <Route path='/tenant/profile' element={<TenantProfile/>}/>
+          <Route path='/tenant/messages' element={<TenantMessages/>}/>
+        </Route>
+        <Route path='/landlord' element={<LandlordNav/>}>
+          <Route index element={<LandlordDashboard/>}/>
+          <Route path='/landlord/management' element={<LandlordManagement/>}/>
+          <Route path='/landlord/profile' element={<LandlordProfile/>}/>
+          <Route path='/landlord/messages' element={<LandlordMessages/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

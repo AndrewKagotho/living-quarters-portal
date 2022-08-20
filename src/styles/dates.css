@@ -1,0 +1,20 @@
+.today span, .duration span, .calendarName {
+  display: block;
+  margin-left: 15px;
+  color: var(--grey)
+}
+.today span:nth-child(2) { margin-top: 8px; }
+.today span:nth-child(2), .today span:nth-child(3) { font-weight: 300; }
+.duration span:nth-child(2) {
+  font-size: var(--massiveFont);
+  font-weight: 300;
+  color: var(--theme);
+  text-align: right;
+  margin-right: 30px;
+  transform: scale(1.15);
+}
+.duration em {
+  font-size: var(--smallFont);
+  font-weight: 400;
+  font-style: normal;
+}

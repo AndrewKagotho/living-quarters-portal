@@ -1,0 +1,46 @@
+.settingsIcon, .updateOptions {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+.settingsIcon {
+  fill: var(--grey);
+  transition: fill 0.2s ease-out, transform 0.2s ease-out;
+}
+.settingsIcon:hover {
+  fill: var(--theme);
+  transform: rotate(-45deg) !important;
+  cursor: pointer;
+}
+.updateOptions { bottom: 95px; }
+.updateOptionsLinks {
+  visibility: visible;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
+}
+.updateOptionsLinks span {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 14px;
+  color: var(--grey);
+}
+.updateOptionsLinks span:hover {
+  background-color: var(--theme);
+  color: var(--neutral);
+  cursor: pointer;
+}
+
+
+.profileInfo {
+  border: 1px solid black;
+}
+.profileInfo span {
+  display: block;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.profileInfo span:nth-child(9)::before, .landlordInfo span:nth-child(5)::before {
+  content: '+254 ';
+}

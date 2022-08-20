@@ -1,0 +1,20 @@
+.summaryText, .summaryValue { display: block; }
+.summaryText {
+  font-size: var(--mediumFont);
+  font-weight: 300;
+  margin: 15px 0 5px 20px;
+  color: var(--grey);
+}
+.summaryValue {
+  font-size: var(--mediumFont);
+  margin-left: 20px;
+  color: var(--theme);
+}
+.summaryValue:nth-child(4)::before, .summaryValue:nth-child(6)::before  { content: 'KES '; }
+.summaryValue:nth-child(4)::after, .summaryValue:nth-child(6)::after { content: '/-'; }
+.emCurrency {
+  font-weight: 400;
+}
+.emCurrency::before { content: 'KES '; }
+.emCurrency::after, .currency::after { content: '/-'; }
+.phoneNo::before { content: '+254 '; }

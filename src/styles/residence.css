@@ -1,0 +1,21 @@
+.residenceInfo {
+  width: 100%;
+  display: flex;
+}
+.residenceInfo div { position: relative; }
+.residenceInfo div:nth-child(1) { left: 40px; }
+.residenceInfo div:nth-child(2) { left: 80px; }
+.residenceInfo span:nth-child(odd) {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--grey);
+}
+.residenceInfo span:nth-child(even) { color: var(--theme); }
+.residenceInfo span:nth-child(even)::before {
+  content: '  ';
+  white-space: pre;
+}
+.residenceInfo span:nth-child(even)::after {
+  content: '';
+  display: block;
+}

@@ -1,0 +1,214 @@
+#mainLanding {
+  height: 100vh;
+  background-image: url('http://127.0.0.1:8888/images/backgroundImage.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 103vh;
+}
+.leftDivLanding {
+  width: 65%;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* border: 1px solid red; */
+}
+#logo {
+  width: 25%;
+  transition: transform 0.1s ease-out;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#logo:hover {
+  transform: translateX(-50%) rotate(-3deg);
+}
+.systemTitle {
+  font-size: 2.3rem;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+  color: #EEE;
+  padding: 15px;
+  border-left: 5px solid #EEE;
+  transition: transform 0.1s ease-out;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.systemTitle:hover {
+  transform: translateX(-50%) rotate(3deg);
+}
+.rightDivLanding, .darkBackground {
+  width: 35%;
+  height: 100vh;
+  position: absolute;
+  right: 0%;
+}
+.darkBackground {
+  background-color: #000;
+  filter: opacity(.3);
+}
+.formContainer {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* border: 1px solid red; */
+}
+.formMenu, .landlordFormMenu {
+  width: 65%;
+  position: relative;
+  border: 2px solid #EEE;
+}
+.formMenu span, .landlordFormMenu span {
+  font-weight: 500;
+  display: inline-block;
+  padding: 15px 0;
+  text-align: center;
+  white-space: nowrap;
+  color: #EEE;
+}
+.formMenu span {
+  width: 50%;
+}
+.formMenu span:hover, .landlordFormMenu span:hover {
+  background-color: hsl(190, 100%, 25%);
+  cursor: pointer;
+}
+.userForms {
+  width: 100%;
+  height: 100%;
+}
+.landlordForms {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.landlordFormMenu {
+  border-bottom: none;
+}
+.landlordFormMenu span {
+  width: 100%;
+}
+.registerForm, .loginForm {
+  width: 100%;
+  display: none;
+  grid-template-columns: 50% 50%;
+  padding-top: 20px;
+  border: 2px solid #EEE;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.registerForm {
+  grid-template-rows: repeat(6, auto);
+}
+.loginForm {
+  grid-template-rows: repeat(3, auto);
+}
+.registerForm button, .loginForm button {
+  grid-column: 1/3;
+}
+.registerForm label, .registerForm input, .loginForm label, .loginForm input {
+  font-weight: 400;
+  white-space: nowrap;
+  margin: 15px 0;
+  color: #EEE;
+}
+.registerForm label, .loginForm label {
+  margin-left: 35px;
+}
+.registerForm label:hover, .loginForm label:hover {
+  cursor: pointer;
+}
+.registerForm input, .loginForm input {
+  border: 0;
+  border-bottom: 1px solid #EEE;
+  background-color: transparent;
+  margin-right: 35px;
+  position: relative;
+}
+.registerForm input {
+  right: 15px;
+}
+.loginForm input {
+  right: 40px;
+}
+input:focus {
+  outline: none;
+  background-color: transparent;
+}
+.registerForm button, .loginForm button {
+  width: 80%;
+  color: #EEE;
+  text-align: center;
+  background-color: hsl(190, 100%, 25%);
+  border: none;
+  padding: 15px;
+  margin: 20px 0 30px 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.registerForm button:hover, .loginForm button:hover {
+  background-color: hsl(190, 100%, 30%);
+  cursor: pointer;
+}
+.browseButton {
+  width: 100%;
+  display: block;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px 0;
+  color: #EEE;
+  text-decoration: none;
+  border: 2px solid #EEE;
+  transition: transform 0.1s ease-out;
+  position: relative;
+}
+.browseButton:hover {
+  background-color: hsl(190, 100%, 25%);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.moreOptions {
+  position: absolute;
+  bottom: 75px;
+  right: 15%;
+}
+.moreOptionsLinks {
+  visibility: visible;
+  opacity: 0;
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+  transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
+  border: 1px solid #EEE;
+}
+.moreOptionsLinks span {
+  font-size: .9rem;
+  font-weight: 400;
+  display: inline-block;
+  padding: 10px;
+  color: #EEE;
+}
+.moreOptionsLinks span:hover {
+  background-color: hsl(190, 100%, 25%);
+  cursor: pointer;
+}
+.moreOptionsGear {
+  color: #000;
+  text-decoration: underline;
+  position: absolute;
+  right: 0px;
+  transform: scale(.9);
+  transition: transform 0.2s ease-out;
+}
+.moreOptionsGear:hover {
+  transform: scale(.9) rotate(-45deg) !important;
+  cursor: pointer;
+}

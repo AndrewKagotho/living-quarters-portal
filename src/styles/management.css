@@ -1,0 +1,312 @@
+.managementContainer {
+  width: 90%;
+  position: relative;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border: 1px solid red; */
+}
+.dbtables {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+}
+.dbtables span {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #EEE;
+  /* border: 1px solid black; */
+}
+.dbtables span:hover {
+  background-color: #DDD;
+}
+.tableContainer {
+  width: 100%;
+  height: 60vh;
+  display: none;
+  margin-top: 20px;
+  position: relative;
+  /* border: 1px solid red; */
+}
+.tableDiv {
+  height: 100%;
+  overflow: auto;
+  box-shadow: 0 0 5px #CCC;
+  background-color: #FFF;
+  transition: width 0.15s ease-out;
+  position: absolute;
+}
+.tableDiv {
+  width: 100%;
+}
+.tableDivHeader {
+  width: 100%;
+  height: 75px;
+  position: relative;
+}
+.tableDivHeader span {
+  font-size: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  color: hsl(190, 100%, 25%);
+  margin: 20px 0;
+  position: relative;
+  left: 15px;
+}
+.tableDivHeader em {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: normal;
+}
+.tableDivHeader button {
+  width: 85px;
+  font-weight: 500;
+  color: #FFF;
+  padding: 10px;
+  border: none;
+  background-color: hsl(190, 100%, 25%);
+  box-shadow: 0 3px 5px #CCC;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.tableDivHeader button:hover {
+  background-color: hsl(190, 100%, 30%);
+  cursor: pointer;
+}
+.tableDivHeader button:nth-child(2) {
+  right: 15px;
+}
+.tableDivHeader button:nth-child(3) {
+  right: 110px;
+}
+.tableDivHeader button:nth-child(4) {
+  right: 205px;
+}
+.tableContainer ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+  /* border: 1px solid red; */
+}
+.dbColumns {
+  font-weight: 500;
+  color: hsl(190, 100%, 25%);
+  margin: 15px 0;
+  /* border: 1px solid red; */
+}
+.eachRecord {
+  font-size: .9rem;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 0;
+}
+.eachRecord:hover {
+  background-color: #EEE;
+}
+.userDbColumns span:nth-child(1), .eachUserRecord span:nth-child(1) {
+  position: relative;
+  left: 30px;
+}
+.userDbColumns span:nth-child(2), .eachUserRecord span:nth-child(2) {
+  position: absolute;
+  left: 85px;
+}
+.userDbColumns span:nth-child(3), .eachUserRecord span:nth-child(3) {
+  position: absolute;
+  left: 230px;
+}
+.userDbColumns span:nth-child(4), .eachUserRecord span:nth-child(4) {
+  position: absolute;
+  left: 380px;
+}
+.userDbColumns span:nth-child(5), .eachUserRecord span:nth-child(5) {
+  position: absolute;
+  left: 500px;
+}
+.userDbColumns span:nth-child(6), .eachUserRecord span:nth-child(6) {
+  position: absolute;
+  left: 640px;
+}
+.transactionsDbColumns span:nth-child(1), .eachTransactionsRecord span:nth-child(1) {
+  position: relative;
+  left: 30px;
+}
+.transactionsDbColumns span:nth-child(2), .eachTransactionsRecord span:nth-child(2) {
+  position: absolute;
+  left: 115px;
+}
+.transactionsDbColumns span:nth-child(3), .eachTransactionsRecord span:nth-child(3) {
+  position: absolute;
+  left: 230px;
+}
+.transactionsDbColumns span:nth-child(4), .eachTransactionsRecord span:nth-child(4) {
+  position: absolute;
+  left: 340px;
+}
+.transactionsDbColumns span:nth-child(5), .eachTransactionsRecord span:nth-child(5) {
+  position: absolute;
+  left: 450px;
+}
+.transactionsDbColumns span:nth-child(6), .eachTransactionsRecord span:nth-child(6) {
+  position: absolute;
+  left: 540px;
+}
+.transactionsDbColumns span:nth-child(7), .eachTransactionsRecord span:nth-child(7) {
+  position: absolute;
+  left: 670px;
+}
+.transactionsDbColumns span:nth-child(8), .eachTransactionsRecord span:nth-child(8) {
+  position: absolute;
+  left: 760px;
+}
+.residenceDbColumns span:nth-child(1), .eachResidenceRecord span:nth-child(1) {
+  position: relative;
+  left: 30px;
+}
+.residenceDbColumns span:nth-child(2), .eachResidenceRecord span:nth-child(2) {
+  position: absolute;
+  left: 120px;
+}
+.residenceDbColumns span:nth-child(3), .eachResidenceRecord span:nth-child(3) {
+  position: absolute;
+  left: 235px;
+}
+.residenceDbColumns span:nth-child(4), .eachResidenceRecord span:nth-child(4) {
+  position: absolute;
+  left: 300px;
+}
+.residenceDbColumns span:nth-child(5), .eachResidenceRecord span:nth-child(5) {
+  position: absolute;
+  left: 400px;
+}
+.residenceDbColumns span:nth-child(6), .eachResidenceRecord span:nth-child(6) {
+  position: absolute;
+  left: 530px;
+}
+.residenceDbColumns span:nth-child(7), .eachResidenceRecord span:nth-child(7) {
+  position: absolute;
+  left: 650px;
+}
+.residenceDbColumns span:nth-child(8), .eachResidenceRecord span:nth-child(8) {
+  position: absolute;
+  left: 770px;
+}
+.residenceDbColumns span:nth-child(9), .eachResidenceRecord span:nth-child(9) {
+  position: absolute;
+  left: 860px;
+}
+.residenceDbColumns span:nth-child(10), .eachResidenceRecord span:nth-child(10) {
+  margin-right: 15px;
+  position: absolute;
+  left: 950px;
+}
+.quartersDbColumns span:nth-child(1), .eachQuartersRecord span:nth-child(1) {
+  position: relative;
+  left: 30px;
+}
+.quartersDbColumns span:nth-child(2), .eachQuartersRecord span:nth-child(2) {
+  position: absolute;
+  left: 110px;
+}
+.quartersDbColumns span:nth-child(3), .eachQuartersRecord span:nth-child(3) {
+  position: absolute;
+  left: 265px;
+}
+.quartersDbColumns span:nth-child(4), .eachQuartersRecord span:nth-child(4) {
+  position: absolute;
+  left: 390px;
+}
+.quartersDbColumns span:nth-child(5), .eachQuartersRecord span:nth-child(5) {
+  position: absolute;
+  left: 510px;
+}
+.quartersDbColumns span:nth-child(6) {
+  position: absolute;
+  left: 630px;
+}
+.eachQuartersRecord span:nth-child(6) {
+  width: 220px;
+  position: relative;
+  left: 620px;
+}
+.quartersDbColumns span:nth-child(7), .eachQuartersRecord span:nth-child(7) {
+  position: absolute;
+  left: 865px;
+}
+.quartersDbColumns span:nth-child(8), .eachQuartersRecord span:nth-child(8) {
+  position: absolute;
+  left: 940px;
+}
+
+/* Forms */
+.managementFormDiv {
+  width: 20%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  overflow: auto;
+  box-shadow: 0 0 5px #CCC;
+  background-color: #FFF;
+  transition: visibility 0.5s, opacity 0.5s ease-out;
+  position: absolute;
+  right: 0;
+}
+.minimizeFormButton {
+  border: none;
+  color: #555;
+  background-color: #FFF;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.minimizeFormButton:hover {
+  background-color: #EEE;
+  cursor: pointer;
+}
+.managementFormDiv span {
+  width: 80%;
+  font-size: .8rem;
+  text-align: center;
+  line-height: 1.5;
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.createListingForm, .updateListingForm, .deleteListingForm {
+  width: 90%;
+  display: none;
+  grid-template-columns: 35% 65%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  /* border: 1px solid red; */
+}
+.managementFormDiv label {
+  font-size: .8rem;
+}
+.managementFormDiv input, .managementFormDiv textarea {
+  margin-bottom: 25px;
+  border: none;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+.managementFormDiv button:last-child {
+  grid-column: 1/3;
+  color: #FFF;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border: none;
+  background-color: hsl(190, 100%, 25%);
+  box-shadow: 0 3px 5px #CCC;
+}
+.managementFormDiv button:last-child:hover {
+  background-color: hsl(190, 100%, 30%);
+  cursor: pointer;
+}

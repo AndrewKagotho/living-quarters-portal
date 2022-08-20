@@ -1,0 +1,33 @@
+.appNav {
+  height: 30px;
+  position: relative;
+  top: 20px;
+}
+.appNav nav {
+  width: 30%;
+  height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.appNav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.appNav li {
+  padding: 0 30px;
+  display: inline;
+}
+.navItem {
+  color: var(--theme);
+  text-decoration: none;
+}
+.navItem:hover {
+  text-decoration: underline;
+}
