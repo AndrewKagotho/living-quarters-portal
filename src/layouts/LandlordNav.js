@@ -2,34 +2,33 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { Outlet, Link } from 'react-router-dom'
 import { mapLandlordDispatchToProps } from '../store/Actions'
-import '../styles/tenant.css'
 
 let fetchTenants = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchUsers.php'
 
 const LandlordNav = (props) => {
   let URLparam = props.username
-  let dashboardBaseURL = '/landlord'
+  let homeBaseURL = '/landlord'
   let managementBaseURL = '/landlord/management'
   let profileBaseURL = '/landlord/profile'
   let messagesBaseURL = '/landlord/messages'
-  let dashboardURL = dashboardBaseURL.concat("?id="+URLparam)
-  let managementURL = managementBaseURL.concat("?id="+URLparam)
-  let profileURL = profileBaseURL.concat("?id="+URLparam)
-  let messagesURL = messagesBaseURL.concat("?id="+URLparam)
+  let homeURL = homeBaseURL.concat('?id='+URLparam)
+  let managementURL = managementBaseURL.concat('?id='+URLparam)
+  let profileURL = profileBaseURL.concat('?id='+URLparam)
+  let messagesURL = messagesBaseURL.concat('?id='+URLparam)
 
   return (
     <div>
-      <div className='header'>
-        <span id='systemTitleNav'>Students' Living Quarters Portal</span>     
-        <Link to='/' className='exitPage'>Log out</Link>
-      </div>
-      <div className='userNav'>
+      <header>
+        <span className='headerTitle'>System name</span>
+        <Link to='/' className='logOut'>Log out</Link>
+      </header>
+      <div className='appNav'>
         <nav>
           <ul>
-            <li><Link to={dashboardURL} className='listNav'>Dashboard</Link></li>
-            <li><Link to={managementURL} className='listNav'>Management</Link></li>
-            <li><Link to={profileURL} className='listNav'>Profile</Link></li>
-            <li><Link to={messagesURL} className='listNav' onClick={() => getTenants(props)}>Messages</Link></li>
+          <li><Link to={homeURL} className='navItem'>Home</Link></li>
+            <li><Link to={managementURL} className='navItem'>Management</Link></li>
+            <li><Link to={profileURL} className='navItem'>Profile</Link></li>
+            <li><Link to={messagesURL} className='navItem' onClick={() => getTenants(props)}>Messages</Link></li>
           </ul>
         </nav>
       </div>

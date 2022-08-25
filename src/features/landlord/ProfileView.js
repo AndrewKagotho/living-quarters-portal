@@ -1,18 +1,18 @@
 import React from 'react'
 import { highlightMenu } from '../../utils/HighlightMenu'
 
-const ProfileView = ({props, profileView, refArray}) => {
+const ProfileView = ({props, profilesView, refArray}) => {
 
   React.useEffect(() => {
-    highlightMenu(profileView, refArray)
+    highlightMenu(profilesView, refArray)
     // eslint-disable-next-line
   }, [])
 
-  if(profileView.view==='Personal')
+  if(profilesView.view==='Personal')
     return (
       <div>
         <h2>My profile</h2>
-        <span className='smallFont description'>Personal tenant information.</span>
+        <span className='smallFont description'>Personal landlord information.</span>
         <div className='grid'>
           <h3>Account:</h3>
           <span className='gridLabel'>Username</span>
@@ -29,11 +29,12 @@ const ProfileView = ({props, profileView, refArray}) => {
         </div>
       </div>
     )
-  else if(profileView.view==='Landlord')
+  else if(profilesView.view==='Tenants')
     return (
       <div>
-        <h2>Landlord's profile</h2>
-        <span className='smallFont description'>Important landlord information.</span>
+        <h2>Tenant profiles</h2>
+        <span className='smallFont description'>Search to view tenant information.</span>
+        {/* <span>Search by:</span> */}
         <div className='grid'>
           <h3>Contacts:</h3>
           <span className='gridLabel'>Name</span>

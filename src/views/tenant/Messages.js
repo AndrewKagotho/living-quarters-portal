@@ -17,20 +17,18 @@ const Messages = (props) => {
   const dateTime = convertDateTime(props)
   const textArea = React.useRef()
   
-  let mssData = {
-    mssTenant: props.username,
-    mssLandlord: props.landlord
-  }
-
   const [mss, setMss] = React.useState({
     mssFrom: props.username,
     mssTo: props.landlord,
     mssBody: ""
   })
   
-  const handleChange = (e) => {
-    setMss({...mss, mssBody: e.target.value})
+  let mssData = {
+    mssTenant: props.username,
+    mssLandlord: props.landlord
   }
+  
+  const handleChange = (e) => setMss({...mss, mssBody: e.target.value})
 
   const handleSubmit = (e) => {
     axios.post(sendMss, mss)
@@ -70,7 +68,9 @@ const Messages = (props) => {
           <div className='menu'>
             <h2>Conversations</h2>
             <ul>
-              <li>{props.landlordFirstName} {props.landlordLastName}</li>
+              <li>
+                <span>{props.landlordFirstName} {props.landlordLastName} <em>(Landlord)</em></span>
+              </li>
             </ul>
           </div>
           <div className='selectedMenuOption smallPadding'>

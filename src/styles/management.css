@@ -1,50 +1,16 @@
-.managementContainer {
-  width: 90%;
-  position: relative;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  /* border: 1px solid red; */
-}
-.dbtables {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 5px;
-}
-.dbtables span {
-  width: 100%;
-  padding: 10px 0;
-  text-align: center;
-  background-color: #EEE;
-  /* border: 1px solid black; */
-}
-.dbtables span:hover {
-  background-color: #DDD;
-}
-.tableContainer {
-  width: 100%;
-  height: 60vh;
-  display: none;
-  margin-top: 20px;
-  position: relative;
-  /* border: 1px solid red; */
-}
 .tableDiv {
-  height: 100%;
+  width: 100%;
+  max-height: 65vh;
   overflow: auto;
-  box-shadow: 0 0 5px #CCC;
-  background-color: #FFF;
-  transition: width 0.15s ease-out;
-  position: absolute;
-}
-.tableDiv {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
 }
 .tableDivHeader {
   width: 100%;
   height: 75px;
   position: relative;
+  /* border: 1px solid blue; */
 }
 .tableDivHeader span {
   font-size: 2rem;
@@ -55,18 +21,15 @@
   position: relative;
   left: 15px;
 }
-.tableDivHeader em {
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-style: normal;
-}
 .tableDivHeader button {
+  /* display: none; */
   width: 85px;
   font-weight: 500;
   color: #FFF;
   padding: 10px;
   border: none;
   background-color: hsl(190, 100%, 25%);
+  border-radius: 10px;
   box-shadow: 0 3px 5px #CCC;
   position: absolute;
   top: 50%;
@@ -93,10 +56,12 @@
   /* border: 1px solid red; */
 }
 .dbColumns {
+  width: 100%;
   font-weight: 500;
+  position: relative;
   color: hsl(190, 100%, 25%);
   margin: 15px 0;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 .eachRecord {
   font-size: .9rem;

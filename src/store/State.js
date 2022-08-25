@@ -96,9 +96,6 @@ export const initialState = {
       to: [],
       time: [],
       body: []
-    },
-    dbData: {
-      selectedDb:""
     }
   },
   browse: {

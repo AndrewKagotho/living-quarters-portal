@@ -172,13 +172,6 @@ const resetTableData = (dbtable) => {
   }
 }
 
-const selectedDb = (x1) => {
-  return {
-    type: 'L_MANAGEMENT_SELECTED_TABLE',
-    selectedDb: x1
-  }
-}
-
 const addLandlordMessages = (x1,x2,x3,x4) => {
   return {
     type: 'L_ADD_MESSAGES',
@@ -217,7 +210,6 @@ export const mapLandlordDispatchToProps = {
   addListingsDetails,
   updateRentHistory,
   resetTableData,
-  selectedDb,
   addLandlordMessages,
   resetLandlordMessages,
   addSearchResults,

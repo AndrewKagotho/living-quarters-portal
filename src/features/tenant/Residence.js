@@ -1,8 +1,6 @@
-import { connect } from 'react-redux'
-
-const Residence = (props) => {
+const Residence = ({props}) => {
   return (
-    <div>
+    <div className='residence'>
       <img src={props.quartersImage} alt='Residence'/>
       <h2>Residence information</h2>
       <div className='residenceInfo'>
@@ -27,17 +25,4 @@ const Residence = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    quartersImage: state.user.residence.quartersImage,
-    firstName: state.user.details.firstName,
-    lastName: state.user.details.lastName,
-    quartersName: state.user.residence.quartersName,
-    activity: state.user.residence.activity,
-    quartersLocation: state.user.residence.quartersLocation,
-    landlordFirstName: state.user.landlord.firstName,
-    landlordLastName: state.user.landlord.lastName
-  }
-}
-
-export default connect(mapStateToProps)(Residence)
+export default Residence

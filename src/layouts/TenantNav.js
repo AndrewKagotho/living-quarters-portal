@@ -2,7 +2,6 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { Outlet, Link } from 'react-router-dom'
 import { mapUserDispatchToProps } from '../store/Actions'
-import '../styles/tenantNav.css'
 
 let fetchMss = 'http://localhost:8080/Students%20LQ%20Portal/src/php/fetchMessages.php'
 
@@ -23,7 +22,7 @@ const TenantNav = (props) => {
   return (
     <div>
       <header>
-        <span className='headerTitle'>System name</span>     
+        <span className='headerTitle'>System name</span> 
         <Link to='/' className='logOut'>Log out</Link>
       </header>
       <div className='appNav'>

@@ -2,15 +2,14 @@ const Weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 const Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const shortFormMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const MonthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-const date = new Date()
+export const date = new Date()
 let dateTimeStamp = []
 let dateStamp = []
 let dateStampInText = []
 let timeStamp = []
 
-
 export const getStartDate = (props) => {
-  let startDate = props.startDate
+  const startDate = props.startDate
   let [startYear, startMonth, startDay] = startDate.split('-')
   startMonth -= 1
   let startMonthText = Months[startMonth]
@@ -24,11 +23,11 @@ export const getStartDate = (props) => {
 }
 
 export const getCurrentDate = () => {
-  let currentDayInText = Weekdays[date.getDay()]
-  let currentDate = date.getDate()
-  let currentMonth = date.getMonth()
-  let currentMonthInText = Months[currentMonth]
-  let currentYear = date.getFullYear()
+  const currentDayInText = Weekdays[date.getDay()]
+  const currentDate = date.getDate()
+  const currentMonth = date.getMonth()
+  const currentMonthInText = Months[currentMonth]
+  const currentYear = date.getFullYear()
 
   return {
     currentDayInText: currentDayInText,
@@ -40,10 +39,10 @@ export const getCurrentDate = () => {
 }
 
 export const getDateDifference = (startDate, currentDate) => {
+  const differenceInYears = currentDate.currentYear - startDate.startYear
+  let differenceInMonths = (currentDate.currentMonth - startDate.startMonth) + 1
   let convertedDifferenceSign = false
   let totalDays = 0
-  let differenceInYears = currentDate.currentYear - startDate.startYear
-  let differenceInMonths = (currentDate.currentMonth - startDate.startMonth) + 1
 
   if(differenceInMonths < 0) {
     differenceInMonths += 12
@@ -56,8 +55,8 @@ export const getDateDifference = (startDate, currentDate) => {
     else
       differenceInMonths += ((differenceInYears) * 12)
 
-  let numYears = Math.floor(differenceInMonths/12)
-  let modulusMonths = differenceInMonths % 12
+  const numYears = Math.floor(differenceInMonths / 12)
+  const modulusMonths = differenceInMonths % 12
   totalDays = 365 * numYears
   let monthDaysIndex = currentDate.currentMonth
 
@@ -87,7 +86,6 @@ export const convertDateTime = (props) => {
   return {
     dateStamp: dateStamp,
     dateStampInText: dateStampInText,
-    timeStamp: timeStamp,
-    shortFormMonths: shortFormMonths
+    timeStamp: timeStamp
   }
 }

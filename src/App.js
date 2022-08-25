@@ -7,16 +7,21 @@ import TenantHome from './views/tenant/Home'
 import TenantProfile from './views/tenant/Profile'
 import TenantMessages from './views/tenant/Messages'
 import LandlordNav from './layouts/LandlordNav'
-import LandlordDashboard from './views/landlord/Dashboard'
+import LandlordHome from './views/landlord/Home'
 import LandlordManagement from './views/landlord/Management'
 import LandlordProfile from './views/landlord/Profile'
 import LandlordMessages from './views/landlord/Messages'
 
+import './styles/index.css'
+import './styles/tenantNav.css'
 import './styles/tenant.css'
 import './styles/residence.css'
 import './styles/myaccount.css'
 import './styles/profile.css'
 import './styles/messages.css'
+import './styles/stats.css'
+import './styles/landlord.css'
+import './styles/management.css'
 
 const App = () => {
   return (
@@ -32,7 +37,7 @@ const App = () => {
           <Route path='/tenant/messages' element={<TenantMessages/>}/>
         </Route>
         <Route path='/landlord' element={<LandlordNav/>}>
-          <Route index element={<LandlordDashboard/>}/>
+          <Route index element={<LandlordHome/>}/>
           <Route path='/landlord/management' element={<LandlordManagement/>}/>
           <Route path='/landlord/profile' element={<LandlordProfile/>}/>
           <Route path='/landlord/messages' element={<LandlordMessages/>}/>

@@ -1,14 +1,17 @@
 import React from 'react'
-import Residence from '../../features/tenant/Residence'
+import Stats from '../../features/landlord/Stats'
+import Listings from '../../features/landlord/Listings'
 import Date from '../../features/tenant/Date'
-import Duration from '../../features/tenant/Duration'
 import Calendar from '../../features/shared/Calendar'
-import AccountSummary from './AccountSummary'
-import Account from './Account'
-import ProfileView from '../../features/tenant/ProfileView'
+import AccountSummary from '../../features/landlord/AccountSummary'
+import ListingsSummary from '../../features/landlord/ListingsSummary'
+import Account from '../../features/landlord/Account'
+import ProfileView from '../../features/landlord/ProfileView'
+// import Search from '../../features/landlord/Search'
 
-const HomeView = ({props, contentView, profileView, setProfileView}) => {
+const HomeView = ({props, contentView}) => {
 
+  const [profilesView, setProfileView] = React.useState({view: 'Personal', num: 0})
   const personalRef = React.useRef()
   const landlordRef = React.useRef()
   const refArray = [personalRef, landlordRef]
@@ -29,13 +32,12 @@ const HomeView = ({props, contentView, profileView, setProfileView}) => {
 
   if(contentView.view==='Overview')
     return (
-      <div>
-        <div className='component activeComponent largeContainer'>
-          <Residence props={props}/>
+      <div className='flexStart'>
+        <div className='largeContainer'>
+          <Stats props={props}/>
         </div>
         <div className='component activeComponent smallContainer'>
-          <Date/>
-          <Duration props={props}/>
+          <div className='datePadding'><Date/></div>
           <Calendar/>
         </div>
       </div>
@@ -60,11 +62,23 @@ const HomeView = ({props, contentView, profileView, setProfileView}) => {
           <h2>View profile</h2>
           <ul>
             <li onClick={() => {viewProfile('Personal', 0); }} ref={personalRef}>Personal</li>
-            <li onClick={() => {viewProfile('Landlord', 1); }} ref={landlordRef}>Landlord</li>
+            <li onClick={() => {viewProfile('Tenants', 1); }} ref={landlordRef}>Tenants</li>
           </ul>
         </div>
         <div className='component activeComponent largeContainer'>
-          <ProfileView props={props} profileView={profileView} refArray={refArray}/>
+          <ProfileView props={props} profilesView={profilesView} refArray={refArray}/>
+        </div>
+      </div>
+    )
+
+  else if(contentView.view==='Listings')
+    return (
+      <div className='flexStart'>
+        <div className='largeContainer'>
+          <Listings props={props}/>
+        </div>
+        <div className='component activeComponent smallContainer'>
+          <ListingsSummary props={props}/>
         </div>
       </div>
     )

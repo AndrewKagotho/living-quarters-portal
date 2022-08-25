@@ -1,9 +1,8 @@
-import { connect } from 'react-redux'
 import { getStartDate } from '../../utils/Date'
 import { getCurrentDate } from '../../utils/Date'
 import { getDateDifference } from '../../utils/Date'
 
-const Duration = (props) => {
+const Duration = ({props}) => {
   const startDate = getStartDate(props)
   const currentDate = getCurrentDate()
   const dateDifference = getDateDifference(startDate, currentDate)
@@ -17,10 +16,4 @@ const Duration = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    startDate: state.user.residence.startDate
-  }
-}
-
-export default connect(mapStateToProps)(Duration)
+export default Duration

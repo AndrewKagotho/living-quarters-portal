@@ -1,31 +1,27 @@
-import { connect } from 'react-redux'
+const Listings = ({props}) => {
 
-const Listings = (props) => {
-  const listing = props.name.map((item, index) => 
-  <li key={index}>
-    <img src={props.image[index]} alt=''/>
-    <span>{props.name[index]}</span>
-    <span>{props.location[index]}</span>
-    <span>{props.vacancy[index]}</span>
-    <span>{props.price[index]}</span>
+  const listing = props.listingName.map((item, index) => 
+  <li key={index} className='component activeComponent'>
+    <h3>{props.listingName[index]}</h3>
+    <div className='listingsInfo'>
+      <img src={props.listingImage[index]} alt='Listing'/>
+      <div>
+        <span>{props.listingLocation[index]}</span>
+        <span>Vacancies: {props.listingVacancy[index]}</span>
+        <span className='emCurrency'>Price: <em>{props.listingPrice[index]}</em></span>
+      </div>
+      <span>{props.listingFeatures[index]}</span>
+    </div>
   </li>
   )
+
   return (
-    <div className='landlordListings'>
-      <h2>My Listings</h2>
-      <ul>{listing}</ul>
-    </div>
+    <>
+      <ul className='listings'>
+        {listing}
+      </ul>
+    </>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    name: state.landlord.listings.names,
-    location: state.landlord.listings.locations,
-    vacancy: state.landlord.listings.vacancies,
-    price: state.landlord.listings.prices,
-    image: state.landlord.listings.images
-  }
-}
-
-export default connect(mapStateToProps)(Listings)
+export default Listings

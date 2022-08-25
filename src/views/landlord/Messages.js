@@ -3,28 +3,24 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { populateState } from '../../utils/L_PopulateState'
 import { mapLandlordDispatchToProps } from '../../store/Actions'
+import { convertDateTime } from '../../utils/Date'
 import { getTenants } from '../../layouts/LandlordNav'
-import '../../styles/messages.css'
 
-const Months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-let dateTimeStamp = []
-let dateStamp = []
-let dateStampInText = []
-let timeStamp = []
 let fetchMss = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchMessages.php'
 let sendMss = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/sendMessage.php'
 
 const Messages = (props) => {
   window.onload = () => populateState(props)
 
+  React.useEffect(() => {
+    getTenants(props)
+    // eslint-disable-next-line
+  }, [])
+
+  const dateTime = convertDateTime(props)
   const selectedChat = React.useRef([])
   const messagesRef = React.useRef()
   const textArea = React.useRef()
-
-  React.useEffect(() => {
-    getTenants(props)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   const [mss, setMss] = React.useState({
     mssFrom: props.username,
@@ -32,9 +28,7 @@ const Messages = (props) => {
     mssBody:""
   })
 
-  const handleChange = (e) => {
-    setMss({...mss, mssBody: e.target.value})
-  }
+  const handleChange = (e) => setMss({...mss, mssBody: e.target.value})
 
   const handleSubmit = (e) => {
     axios.post(sendMss, mss)
@@ -45,19 +39,7 @@ const Messages = (props) => {
     e.preventDefault()
   }
 
-  for(let i=0; i<props.messageTime.length; i++)
-    dateTimeStamp[i] = props.messageTime[i].split(' ')
-
-  for(let i=0; i<dateTimeStamp.length; i++) {
-    dateStamp[i] = dateTimeStamp[i][0].split('-')
-    timeStamp[i] = dateTimeStamp[i][1].split(':')
-  }
-
-  for(let i=0; i<dateStamp.length; i++)
-    dateStampInText[i] = Months[dateStamp[i][1]-1]
-
   const updateMssComponents = (index) => {
-    messagesRef.current.style.display = 'block'
     selectedChat.current[index].style.backgroundColor = 'hsl(190, 100%, 25%)'
     selectedChat.current[index].style.color = '#EEE'
     for(let i=0; i<selectedChat.current.length; i++) {
@@ -96,8 +78,7 @@ const Messages = (props) => {
       getMessages(props.tenantUsernames[index]);
       updateMssComponents(index)
     }}>
-      <span>{props.tenantFirstNames[index]} {props.tenantLastNames[index]}</span>
-      <span>({props.tenantUsernames[index]})</span>
+      <span>{props.tenantFirstNames[index]} {props.tenantLastNames[index]} <em>({props.tenantUsernames[index]})</em></span>
     </li>
   )
 
@@ -106,14 +87,18 @@ const Messages = (props) => {
       return (
         <li key={index} className='messageBubble myMessage'>
           <span>{props.messageBody[index]}</span>
-          <span>{timeStamp[index][0]}:{timeStamp[index][1]} on {dateStamp[index][2]} {dateStampInText[index]}, {dateStamp[index][0]}</span>
+          <span>
+            {dateTime.timeStamp[index][0]}:{dateTime.timeStamp[index][1]} on {dateTime.dateStamp[index][2]} {dateTime.dateStampInText[index]}, {dateTime.dateStamp[index][0]}
+          </span>
         </li>
       )
     else
     return (
       <li key={index} className='messageBubble'>
         <span>{props.messageBody[index]}</span>
-        <span>{timeStamp[index][0]}:{timeStamp[index][1]} on {dateStamp[index][2]} {dateStampInText[index]}, {dateStamp[index][0]}</span>
+        <span>
+          {dateTime.timeStamp[index][0]}:{dateTime.timeStamp[index][1]} on {dateTime.dateStamp[index][2]} {dateTime.dateStampInText[index]}, {dateTime.dateStamp[index][0]}
+        </span>
       </li>
     )
   })
@@ -121,18 +106,26 @@ const Messages = (props) => {
   return (
     <div>
       <h1 className='backgroundArt'>Messages</h1>
-      <div className='tenantChats'>
-        <span>Chats</span>
-        <ul>{tenantsList}</ul>
-      </div>
-      <div className='messagesContainer' ref={messagesRef}>
-        <div className='messagesDiv'>
-          <ul>{messageBubble}</ul>
+      <div className='container'>
+        <div className='tenantMain'>
+          <div className='menu'>
+            <h2>Conversations</h2>
+            <ul>{tenantsList}</ul>
+          </div>
+          <div className='selectedMenuOption smallPadding'>
+            <div>
+              <div className='messagesContainer' ref={messagesRef}>
+                <div className='messagesDiv'>
+                  <ul>{messageBubble}</ul>
+                </div>
+                <form onSubmit={handleSubmit} className='sendMessage'>
+                  <textarea value={mss.mssBody} placeholder='Type your message here...' ref={textArea} onChange={handleChange}></textarea>
+                  <button>Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        <form onSubmit={handleSubmit} className='sendMessage'>
-          <textarea value={mss.mssBody} placeholder='Type your message here...' ref={textArea} onChange={handleChange}></textarea>
-          <button>Send</button>
-        </form>
       </div>
     </div>
   )
@@ -140,11 +133,11 @@ const Messages = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    username: state.landlord.details.username,
     messageFrom: state.landlord.messages.from,
     messageTo: state.landlord.messages.to,
     messageTime: state.landlord.messages.time,
     messageBody: state.landlord.messages.body,
+    username: state.landlord.details.username,
     tenantUsernames: state.landlord.tenants.usernames,
     tenantFirstNames: state.landlord.tenants.firstNames,
     tenantLastNames: state.landlord.tenants.lastNames,

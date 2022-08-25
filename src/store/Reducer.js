@@ -214,16 +214,6 @@ export const appReducer = (state = initialState, action) => {
           }
         }
       }
-    case 'L_MANAGEMENT_SELECTED_TABLE':
-      return {...state,
-        landlord: {
-          ...state.landlord,
-          dbData: {
-            ...state.landlord.dbData,
-            selectedDb: action.selectedDb
-          }
-        }
-      }
     case 'L_RESET_TABLE_DATA':
       if(action.dbtable==='transactions')
         return {...state,

@@ -2,14 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { populateState } from '../../utils/U_PopulateState'
 import { mapUserDispatchToProps } from '../../store/Actions'
-import ProfileView from '../../features/tenant/ProfileView'
 
 let showOptions = false
 
 const Profile = (props) => {
   window.onload = () => populateState(props)
 
-  const [contentView, setView] = React.useState('viewProfile')
+  // const [contentView, setView] = React.useState('viewProfile')
   const viewProfileRef = React.useRef()
   const viewLandlordRef = React.useRef()
   const refArray = [viewProfileRef, viewLandlordRef]
@@ -17,7 +16,7 @@ const Profile = (props) => {
   const linksRef = React.useRef()
 
   const viewContent = (arg, num) => {
-    setView(arg)
+    // setView(arg)
 
     for(let index=0; index<refArray.length; index++) {
       if(index===num) {
@@ -59,7 +58,7 @@ const Profile = (props) => {
             </ul>
           </div>
           <div className='selectedMenuOption'>
-            <ProfileView props={props} contentView={contentView}/>
+            Profile waz hia
           </div>
         </div>
       </div>

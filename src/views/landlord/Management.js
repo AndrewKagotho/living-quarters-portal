@@ -2,34 +2,56 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { populateState } from '../../utils/L_PopulateState'
 import { mapLandlordDispatchToProps } from '../../store/Actions'
-import ManageDb from '../../features/landlord/ManageDb'
-import '../../styles/management.css'
-
-let dbToDisplay
+import { highlightMenu } from '../../utils/HighlightMenu'
+import ManageView from '../../features/landlord/ManageView'
 
 const Management = (props) => {
   window.onload = () => populateState(props)
 
-  const tableFormDivRef = React.useRef()
+  React.useEffect(() => {
+    highlightMenu(contentView, refArray)
+    // eslint-disable-next-line
+  }, [])
+  
+  const [contentView, setView] = React.useState({view: 'Tenants', num: 0})
+  const tenantsRef = React.useRef()
+  const transactionsRef = React.useRef()
+  const residenceRef = React.useRef()
+  const quartersRef  = React.useRef()
+  const refArray = [tenantsRef, transactionsRef, residenceRef, quartersRef]
 
-  const displayDiv = (dbname) => {
-    props.selectedDb(dbname)
-    dbToDisplay = dbname
-    tableFormDivRef.current.style.display = 'block'
+  const viewContent = (arg, num) => {
+    setView({view: arg, num: num})
+    // highlightMenu(contentView, refArray)
+
+    for(let index=0; index<refArray.length; index++) {
+      if(index===num) {
+        refArray[index].current.style.backgroundColor = 'var(--theme)'
+        refArray[index].current.style.color = 'var(--neutral)'
+        continue
+      }
+      refArray[index].current.style.backgroundColor = 'transparent'
+      refArray[index].current.style.color = 'var(--font)'
+    }
   }
 
   return (
     <div>
-      <h1 className='backgroundArt'>Databases</h1>
-      <div className='managementContainer'>
-        <div className='dbtables'>
-          <span onClick={() => displayDiv('users')}>User</span>
-          <span onClick={() => displayDiv('transactions')}>Transactions</span>
-          <span onClick={() => displayDiv('residence')}>Residence</span>
-          <span onClick={() => displayDiv('quarters')}>Quarters</span>
-        </div>
-        <div className='tableContainer' ref={tableFormDivRef}>
-          <ManageDb props={props} dbToDisplay={dbToDisplay}/>
+      <h1 className='backgroundArt'>{contentView.view}</h1>
+      <div className='container'>
+        <div className='tenantMain'>
+          <div className='menu'>
+            <h2>Database tables</h2>
+            <ul>
+              <li onClick={() => viewContent('Tenants', 0)} ref={tenantsRef}>Tenants</li>
+              <li onClick={() => viewContent('Transactions', 1)} ref={transactionsRef}>Transactions</li>
+              <li onClick={() => viewContent('Residence', 2)} ref={residenceRef}>Residence</li>
+              <li onClick={() => viewContent('Quarters', 3)} ref={quartersRef}>Listings</li>
+            </ul>
+          </div>
+          <div className='selectedMenuOption'>
+            <ManageView props={props} contentView={contentView}/>
+          </div>
         </div>
       </div>
     </div>
@@ -39,7 +61,6 @@ const Management = (props) => {
 const mapStateToProps = (state) => {
   return {
     username: state.landlord.details.username,
-    selectedDbName: state.landlord.dbData.selectedDb,
     tenantUsernames: state.landlord.tenants.usernames,
     tenantFirstNames: state.landlord.tenants.firstNames,
     tenantLastNames: state.landlord.tenants.lastNames,

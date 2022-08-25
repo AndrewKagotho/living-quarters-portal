@@ -1,6 +1,4 @@
-import { connect } from 'react-redux'
-
-const Welcome = (props) => {
+const Welcome = ({props}) => {
   const date = new Date()
 
   let hour = date.getHours()
@@ -14,16 +12,10 @@ const Welcome = (props) => {
     timedGreeting = 'Good evening'
 
   return (
-    <div className='pretext'>
+    <div className='welcomeText'>
       <h2>{timedGreeting}, {props.firstName}!</h2>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    firstName: state.landlord.details.firstName
-  }
-}
-
-export default connect(mapStateToProps)(Welcome)
+export default Welcome

@@ -1,6 +1,7 @@
+.datePadding { padding-bottom: 20px; }
 .today span, .duration span, .calendarName {
   display: block;
-  margin-left: 15px;
+  margin-left: 20px;
   color: var(--grey)
 }
 .today span:nth-child(2) { margin-top: 8px; }
@@ -16,5 +17,4 @@
 .duration em {
   font-size: var(--smallFont);
   font-weight: 400;
-  font-style: normal;
 }
