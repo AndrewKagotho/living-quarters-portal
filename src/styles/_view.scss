@@ -1,0 +1,63 @@
+.welcome_text {
+  @include h_center_content;
+  margin-bottom: 30px;
+  padding: 0;
+  color: $grey;
+  text-shadow: 0 4px 3px $shadow;
+  text-align: center;
+}
+
+// Overview
+
+.container {
+  width: 90vw;
+  @include h_center_content;
+  top: 50px;
+}
+
+.container__content {
+  margin-bottom: 15vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+menu {
+  width: 20vw;
+  margin: 0;
+  
+  h2 { padding-left: 0; }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid $theme;
+  }
+
+  li {
+    padding: 15px 20px;
+    color: $grey;
+    border-radius: 0 20px 20px 0;
+    transition: text-indent $animation;
+    cursor: default;
+
+    &:hover { text-indent: 10px; }
+  }
+}
+
+.container__content__selected {
+  width: 67vw;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.smallContainer {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.largeContainer { width: 44vw; }

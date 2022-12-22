@@ -8,7 +8,7 @@
   $dbserver = 'localhost';
   $dbuser = 'root';
   $dbpass = '';
-  $dbname = 'slq portal';
+  $dbname = 'livingquartersdb';
 
   $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
 

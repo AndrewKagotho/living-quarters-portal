@@ -16,9 +16,9 @@
     $date = $data->date;
 
     if($action==='create')
-      $sql = "INSERT INTO `transactions`(`payer`, `payee`, `payable`, `method`, `reference no`, `paid`, `date`) VALUES ('$payer', '$payee', '$payable', '$method', '$refNo', '$paid', '$date')";
+      $sql = "INSERT INTO `transactions`(`payer`, `payee`, `payable`, `method`, `refNo`, `paid`, `date`) VALUES ('$payer', '$payee', '$payable', '$method', '$refNo', '$paid', '$date')";
     elseif($action==='update')
-      $sql = "UPDATE `transactions` SET `payer`='$payer', `payee`='$payee', `payable`='$payable', `method`='$method', `reference no`='$refNo', `paid`='$paid', `date`='$date' WHERE `transactionID` = '$tid'";
+      $sql = "UPDATE `transactions` SET `payer`='$payer', `payee`='$payee', `payable`='$payable', `method`='$method', `refNo`='$refNo', `paid`='$paid', `date`='$date' WHERE `transactionID` = '$tid'";
     elseif($action=='delete')
     $sql = "DELETE FROM `transactions` WHERE `transactionID` = '$tid'";
   }

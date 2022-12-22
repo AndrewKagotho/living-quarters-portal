@@ -1,82 +1,229 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&family=Ubuntu:wght@400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&family=Ubuntu:wght@400;500;700&display=swap");
 html {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
 }
-:root {
-  --theme: hsl(190, 100%, 25%);
-  --lightTheme: hsl(190, 100%, 32%);
-  --greyHover: #F3F3F3;
-  --grey: #555;
-  --mildGrey: rgba(85, 85, 85, .4);
-  --neutral: #FFF;
-  --shadow: #DDD;
-  --smallFont: .8rem;
-  --mediumFont: 1.2rem;
-  --largeFont: 1.6rem;
-  --massiveFont: 4rem;
+
+h2 {
+  font-weight: 400;
+  margin: 0;
+  padding: 20px 0 10px 20px;
+  color: hsl(190deg, 100%, 25%);
 }
-.smallFont {
-  font-size: var(--smallFont);
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 0 10px 20px;
+  color: hsl(190deg, 100%, 25%);
 }
-.mediumFont {
-  font-size: var(--mediumFont);
+
+a {
+  color: hsl(190deg, 100%, 25%);
+  text-decoration: none;
 }
-.largeFont {
-  font-size: var(--largeFont);
+a:hover {
+  text-decoration: underline;
 }
-em { font-style: normal; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+em {
+  font-style: normal;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(85, 85, 85, 0.4);
+}
+
+.card {
+  border-radius: 20px;
+  background-color: #FFF;
+  box-shadow: 0 0 5px 1px #DDD;
+  padding-bottom: 15px;
+  transition: scale 0.2s ease-out;
+}
+.card:hover {
+  scale: 1.02;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+p {
+  line-height: 1.7;
+}
+
+button {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border: none;
+  border: 1px solid #555;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-out;
+}
 header {
   width: 100%;
   height: 100px;
   box-shadow: 0 5px 5px #EEE;
   position: relative;
 }
-.backgroundArt {
+header span {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: hsl(190deg, 100%, 25%);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  position: absolute;
+}
+header a {
+  position: relative;
+  top: 50%;
+  translate: 0 -50%;
+  position: absolute;
+  right: 5%;
+}
+header a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  position: relative;
+  left: 50%;
+  translate: -50% 0;
+  top: 20px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.background_art {
   font-size: 16rem;
   margin: 0;
-  color: var(--theme);
+  color: hsl(190deg, 100%, 25%);
   user-select: none;
-  filter: opacity(.1);
+  opacity: 0.1;
   position: fixed;
   top: 75%;
   left: 15px;
-  transform: translateY(-50%);
+  translate: 0 -50%;
 }
-hr {
-  border: none;
-  border-top: 1px solid var(--mildGrey);
+
+footer {
+  width: 100;
+  height: 100px;
+  background-color: hsl(190deg, 100%, 25%);
+  box-shadow: 0 -5px 5px #CCC;
+  position: relative;
+  bottom: 0;
 }
-h2 {
-  font-weight: 400;
+footer span {
+  font-size: 0.9rem;
+  color: #EEE;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  position: absolute;
+}
+
+.welcome_text {
+  position: relative;
+  left: 50%;
+  translate: -50% 0;
+  margin-bottom: 30px;
+  padding: 0;
+  color: #555;
+  text-shadow: 0 4px 3px #DDD;
+  text-align: center;
+}
+
+.container {
+  width: 90vw;
+  position: relative;
+  left: 50%;
+  translate: -50% 0;
+  top: 50px;
+}
+
+.container__content {
+  margin-bottom: 15vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+menu {
+  width: 20vw;
   margin: 0;
-  padding: 20px 0 10px 20px;
-  color: var(--theme);
 }
-.description {
-  font-size: var(--smallFont);
-  color: var(--grey);
-  display: block;
-  margin: 0 10px 15px 20px;
+menu h2 {
+  padding-left: 0;
 }
-h3 {
-  font-size: var(--mediumFont);
-  font-weight: 400;
-  margin: 0;
-  padding: 0 0 10px 20px;
-  color: var(--theme);
+menu ul {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid hsl(190deg, 100%, 25%);
 }
-.component {
-  border-radius: 20px;
-  background-color: #FFF;
-  box-shadow: 0 0 5px 1px var(--shadow);
-  padding-bottom: 15px;
+menu li {
+  padding: 15px 20px;
+  color: #555;
+  border-radius: 0 20px 20px 0;
+  transition: text-indent 0.2s ease-out;
+  cursor: default;
 }
-.activeComponent { transition: transform 0.2s ease-out; }
-.activeComponent:hover { transform: scale(1.02); }
+menu li:hover {
+  text-indent: 10px;
+}
+
+.container__content__selected {
+  width: 67vw;
+}
+.container__content__selected > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.smallContainer {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.largeContainer {
+  width: 44vw;
+}
+
+/*# sourceMappingURL=index.css.map */

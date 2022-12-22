@@ -11,10 +11,9 @@ import LandlordHome from './views/landlord/Home'
 import LandlordManagement from './views/landlord/Management'
 import LandlordProfile from './views/landlord/Profile'
 import LandlordMessages from './views/landlord/Messages'
-
 import './styles/index.css'
-import './styles/tenantNav.css'
-import './styles/tenant.css'
+
+// import './styles/tenant.css'
 import './styles/residence.css'
 import './styles/myaccount.css'
 import './styles/profile.css'

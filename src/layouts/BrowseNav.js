@@ -1,5 +1,4 @@
 import { Outlet, Link } from 'react-router-dom'
-import '../styles/headerFooter.css'
 
 const BrowseNav = () => {
   return (

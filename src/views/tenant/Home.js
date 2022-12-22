@@ -36,25 +36,28 @@ const Home = (props) => {
   }
 
   return (
-    <div>
-      <h1 className='backgroundArt'>{contentView.view}</h1>
+    <>
+      <h1 className='background_art'>{contentView.view}</h1>
       <div className='container'>
-        <Welcome props={props}/>
-        <div className='tenantMain'>
-          <div className='menu'>
-            <h2>Home menu</h2>
+        <Welcome props={props} />
+        <div className='container__content'>
+          <menu>
+            <h2>Menu</h2>
             <ul>
               <li onClick={() => viewContent('Overview', 0)} ref={overviewRef}>Overview</li>
               <li onClick={() => viewContent('Account', 1)} ref={accountRef}>Account</li>
               <li onClick={() => viewContent('Profile', 2)} ref={profileRef}>Profile</li>
+              <li onClick={() => viewContent('Messages', 3)} ref={profileRef}>Messages</li>
             </ul>
-          </div>
-          <div className='selectedMenuOption'>
-            <HomeView props={props} contentView={contentView} profileView={profileView} setProfileView={setProfileView}/>
+          </menu>
+          <div className='container__content__selected'>
+            <div>
+              <HomeView props={props} contentView={contentView} profileView={profileView} setProfileView={setProfileView} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

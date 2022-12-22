@@ -29,25 +29,25 @@ const HomeView = ({props, contentView, profileView, setProfileView}) => {
 
   if(contentView.view==='Overview')
     return (
-      <div>
-        <div className='component activeComponent largeContainer'>
+      <>
+        <div className='card largeContainer'>
           <Residence props={props}/>
         </div>
-        <div className='component activeComponent smallContainer'>
+        <div className='card smallContainer'>
           <Date/>
           <Duration props={props}/>
           <Calendar/>
         </div>
-      </div>
+      </>
     )
 
   else if(contentView.view==='Account')
     return (
       <div className='flexStart'>
-        <div className='component activeComponent smallContainer'>
+        <div className='card smallContainer'>
           <AccountSummary props={props}/>
         </div>
-        <div className='component activeComponent largeContainer'>
+        <div className='card largeContainer'>
           <Account props={props}/>
         </div>
       </div>
@@ -63,7 +63,7 @@ const HomeView = ({props, contentView, profileView, setProfileView}) => {
             <li onClick={() => {viewProfile('Landlord', 1); }} ref={landlordRef}>Landlord</li>
           </ul>
         </div>
-        <div className='component activeComponent largeContainer'>
+        <div className='card largeContainer'>
           <ProfileView props={props} profileView={profileView} refArray={refArray}/>
         </div>
       </div>

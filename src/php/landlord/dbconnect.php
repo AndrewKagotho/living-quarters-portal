@@ -5,10 +5,10 @@
   header("Content-Type: application.json; charset=UTF-8");
   header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
   
-  $dbserver = 'localhost';
+  $dbserver = 'localhost:3307';
   $dbuser = 'root';
   $dbpass = '';
-  $dbname = 'slq portal';
+  $dbname = 'livingquartersdb';
 
   $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname);
 

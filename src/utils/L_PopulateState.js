@@ -1,11 +1,11 @@
 import axios from 'axios'
 
 let URLlocation = {url: window.location.href}
-let fetchLandlord = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchLandlord.php'
-let fetchUsers = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchUsers.php'
-let fetchResidence = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchResidence.php'
-let fetchListings = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchListings.php'
-let fetchTransactions = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchTransactions.php'
+let fetchLandlord = 'http://localhost/living-quarters-portal/src/php/landlord/fetchLandlord.php'
+let fetchUsers = 'http://localhost/living-quarters-portal/src/php/landlord/fetchUsers.php'
+let fetchResidence = 'http://localhost/living-quarters-portal/src/php/landlord/fetchResidence.php'
+let fetchListings = 'http://localhost/living-quarters-portal/src/php/landlord/fetchListings.php'
+let fetchTransactions = 'http://localhost/living-quarters-portal/src/php/landlord/fetchTransactions.php'
 
 export const populateState = (props) => {
   axios.post(fetchLandlord, URLlocation)

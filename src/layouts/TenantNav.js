@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Outlet, Link } from 'react-router-dom'
 import { mapUserDispatchToProps } from '../store/Actions'
 
-let fetchMss = 'http://localhost:8080/Students%20LQ%20Portal/src/php/fetchMessages.php'
+let fetchMss = 'http://localhost/living-quarters-portal/src/php/fetchMessages.php'
 
 const TenantNav = (props) => {
   let URLparam = props.username
@@ -20,22 +20,20 @@ const TenantNav = (props) => {
   }
 
   return (
-    <div>
+    <>
       <header>
-        <span className='headerTitle'>System name</span> 
-        <Link to='/' className='logOut'>Log out</Link>
+        <span>Students' Living Quarters Portal</span> 
+        <Link to='/'>Log out</Link>
       </header>
-      <div className='appNav'>
-        <nav>
-          <ul>
-            <li><Link to={homeURL} className='navItem'>Home</Link></li>
-            <li><Link to={profileURL} className='navItem'>Profile</Link></li>
-            <li><Link to={messagesURL} className='navItem' onClick={() => getMessages(props,mssData)}>Messages</Link></li>
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        <ul>
+          <li><Link to={homeURL}>Home</Link></li>
+          <li><Link to={profileURL}>Profile</Link></li>
+          <li><Link to={messagesURL} onClick={() => getMessages(props,mssData)}>Messages</Link></li>
+        </ul>
+      </nav>
       <Outlet/>
-    </div>
+    </>
   )
 }
 

@@ -3,9 +3,9 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Settings from '../../assets/images/settings.png'
 
-let loginScript = 'http://localhost:8080/Students%20LQ%20Portal/src/php/login.php'
-let registerScript = 'http://localhost:8080/Students%20LQ%20Portal/src/php/register.php'
-let landlordLoginScript = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlordLogin.php'
+let loginScript = 'http://localhost/living-quarters-portal/src/php/login.php'
+let registerScript = 'http://localhost/living-quarters-portal/src/php/register.php'
+let landlordLoginScript = 'http://localhost/living-quarters-portal/src/php/landlordLogin.php'
 let loginTabCounter = 0
 let signUpTabCounter = 0
 let showOptions = false

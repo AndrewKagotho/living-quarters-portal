@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;500&family=Ubuntu:wght@400;500;700&display=swap');
+
+html {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+:root {
+  --theme: hsl(190, 100%, 25%);
+  --lightTheme: hsl(190, 100%, 32%);
+  --greyHover: #F3F3F3;
+  --grey: #555;
+  --mildGrey: rgba(85, 85, 85, .4);
+  --neutral: #FFF;
+  --shadow: #DDD;
+  --smallFont: .8rem;
+  --mediumFont: 1.2rem;
+  --largeFont: 1.6rem;
+  --massiveFont: 4rem;
+}
+.smallFont {
+  font-size: var(--smallFont);
+}
+.mediumFont {
+  font-size: var(--mediumFont);
+}
+.largeFont {
+  font-size: var(--largeFont);
+}
+em { font-style: normal; }
+.backgroundArt {
+  font-size: 16rem;
+  margin: 0;
+  color: var(--theme);
+  user-select: none;
+  filter: opacity(.1);
+  position: fixed;
+  top: 75%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--mildGrey);
+}
+h2 {
+  font-weight: 400;
+  margin: 0;
+  padding: 20px 0 10px 20px;
+  color: var(--theme);
+}
+.description {
+  font-size: var(--smallFont);
+  color: var(--grey);
+  display: block;
+  margin: 0 10px 15px 20px;
+}
+h3 {
+  font-size: var(--mediumFont);
+  font-weight: 400;
+  margin: 0;
+  padding: 0 0 10px 20px;
+  color: var(--theme);
+}
+.component {
+  border-radius: 20px;
+  background-color: #FFF;
+  box-shadow: 0 0 5px 1px var(--shadow);
+  padding-bottom: 15px;
+}
+.activeComponent { transition: transform 0.2s ease-out; }
+.activeComponent:hover { transform: scale(1.02); }

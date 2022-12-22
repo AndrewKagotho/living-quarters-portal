@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-let fetchResidence = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchResidence.php'
-let fetchListings = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchListings.php'
-let fetchTransactions = 'http://localhost:8080/Students%20LQ%20Portal/src/php/landlord/fetchTransactions.php'
+let fetchResidence = 'http://localhost/living-quarters-portal/src/php/landlord/fetchResidence.php'
+let fetchListings = 'http://localhost/living-quarters-portal/src/php/landlord/fetchListings.php'
+let fetchTransactions = 'http://localhost/living-quarters-portal/src/php/landlord/fetchTransactions.php'
 
 export const updateState = (props, dbtable) => {
   if(dbtable==='residence') {

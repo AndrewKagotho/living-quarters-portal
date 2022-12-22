@@ -47,8 +47,8 @@
 .menu em { font-size: var(--smallFont); }
 
 /* Page content */
-.selectedMenuOption { width: 75%; }
-.selectedMenuOption > div {
+.container__content__selected { width: 75%; }
+.container__content__selected > div {
   display: flex;
   justify-content: space-between;
   /* margin-bottom: 50px; */
