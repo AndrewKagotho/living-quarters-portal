@@ -65,6 +65,12 @@ h3 {
   margin: 0;
   color: $theme;
 }
+
+form {
+  & > * { font-family: 'Noto Sans', sans-serif; }
+}
+
+button { font-family: 'Noto Sans', sans-serif; }
   
 a {
   color: $theme;
@@ -117,24 +123,4 @@ dd {
   // & > * { border: 1px solid blue; }
   
   h3 { grid-column: 1/3; }
-}
-
-//////////////////////////////
-
-p { line-height: $line_height; }
-
-button {
-  font-family: 'Bai Jamjuree', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 5px 15px;
-  border: none;
-  border: 1px solid $grey;
-  background-color: transparent;
-  border-radius: $border_radius;
-  transition: background-color $animation;
-
-  &:hover {
-    // background-color: $hover;
-  }
 }

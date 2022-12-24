@@ -1,13 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { populateState } from '../../utils/U_PopulateState'
+import { getMessages } from '../../utils/U_PopulateState'
 import { mapUserDispatchToProps } from '../../store/Actions'
 import { highlightMenu } from '../../utils/HighlightMenu'
 import Welcome from '../../features/shared/Welcome'
 import HomeView from '../../features/tenant/HomeView'
 
 const Home = (props) => {
-  window.onload = () => populateState(props)
+  
+  populateState(props)
+
+  let mssData = {
+    mssTenant: props.username,
+    mssLandlord: props.landlordUsername
+  }
+
+  getMessages(props,mssData)
 
   React.useEffect(() => {
     highlightMenu(contentView, refArray)
@@ -38,9 +47,9 @@ const Home = (props) => {
 
   return (
     <>
+      <Welcome props={props} />
       <h1 className='background_art'>{contentView.view}</h1>
       <div className='container'>
-        <Welcome props={props} />
         <div className='container__content'>
           <menu>
             <h2>Menu</h2>
@@ -81,6 +90,7 @@ const mapStateToProps = (state) => {
     payDetails: state.user.landlord.payDetails,
     payable: state.user.transactions.payable,
     paid: state.user.transactions.paid,
+    landlordUsername: state.user.landlord.username,
     landlordFirstName: state.user.landlord.firstName,
     landlordLastName: state.user.landlord.lastName,
     landlordEmail: state.user.landlord.email,

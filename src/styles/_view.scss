@@ -1,20 +1,10 @@
-.welcome_text {
-  @include h_center_content;
-  margin-bottom: 30px;
-  padding: 0;
-  color: $grey;
-  text-shadow: 0 4px 3px $shadow;
-  text-align: center;
-}
-
 .container {
   width: 90vw;
   @include h_center_content;
-  top: 50px;
 }
 
 .container__content {
-  margin-bottom: 15vh;
+  margin-bottom: 7vh;
   display: flex;
   justify-content: space-between;
 }
@@ -127,6 +117,98 @@
   }
 }
 
-// Overview
+.messages_container {
+  height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-// Account
+  // @include bor;
+  // & > * { @include bor; }
+
+  & > div {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  ul {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  li {
+    width: 55%;
+    font-size: .9rem;
+    color: #FFF;
+    box-shadow: 5px 5px 5px $shadow;
+    border-radius: 10px;
+    background-color: $light_theme;
+    display: flex;
+    flex-direction: column;
+    transition: scale $animation;
+    @include h_center_content;
+    translate: -85% 0;
+    cursor: pointer;
+
+    &:hover { scale: $scale; }
+
+    span:first-child {
+      line-height: 1.3;
+      padding: 1.5vh 1vw 0;
+    }
+
+    span:last-child {
+      font-size: $small_font;
+      text-align: right;
+      padding: 1vh 1vw 1.5vh;
+    }
+  }
+
+  .my_message {
+    translate: -15% 0;
+    background-color: $theme;
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    translate: 0 2vh;
+
+    textarea {
+      width: 36vw;
+      height: 10vh;
+      font-size: 1rem;
+      padding: 10px 14px;
+      box-sizing: border-box;
+      border-color: $grey;
+      border-radius: 10px;
+      resize: none;
+      transition: box-shadow $animation;
+
+      &:focus {
+        outline: none;
+        box-shadow: 5px 5px 5px $shadow;
+      }
+    }
+
+    button {
+      width: 7vw;
+      height: 5vh;
+      color: #FFF;
+      background-color: $theme;
+      box-shadow: 0 5px 5px $shadow;
+      border-radius: 10px;
+      border: none;
+      transition: background-color $animation;
+      cursor: pointer;
+
+      &:hover { background-color: $light_theme; }
+    }
+  }
+}

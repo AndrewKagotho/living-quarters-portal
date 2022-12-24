@@ -6,6 +6,7 @@ let fetchResidence = 'http://localhost/living-quarters-portal/src/php/fetchResid
 let fetchQuarters = 'http://localhost/living-quarters-portal/src/php/fetchQuarters.php'
 let fetchLandlord = 'http://localhost/living-quarters-portal/src/php/fetchLandlord.php'
 let fetchTransactions = 'http://localhost/living-quarters-portal/src/php/fetchTransactions.php'
+let fetchMss = 'http://localhost/living-quarters-portal/src/php/fetchMessages.php'
 
 export const populateState = (props) => {
   axios.post(fetchUser, URLlocation)
@@ -40,6 +41,7 @@ export const populateState = (props) => {
       axios.post(fetchLandlord, response.data.lid)
       .then((response) => {
         props.addLandlordDetails(
+          response.data.username,
           response.data['first name'],
           response.data['last name'],
           response.data.email,
@@ -64,5 +66,23 @@ export const populateState = (props) => {
         recordIndex++
       }
     })
+  })
+}
+
+export const getMessages = (props, mssData) => {
+  props.resetUserMessages()
+  axios.post(fetchMss, mssData)
+  .then((response) => {
+    const resArray = response.data
+    let recordIndex = 0
+    while(recordIndex < resArray.length) {
+      props.addMessage(
+        resArray[recordIndex].mssFrom,
+        resArray[recordIndex].mssTo,
+        resArray[recordIndex].mssTime,
+        resArray[recordIndex].mssBody
+      )
+      recordIndex++
+    }
   })
 }

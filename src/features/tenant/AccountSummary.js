@@ -10,7 +10,7 @@ const AccountSummary = ({props}) => {
       <span className='description'>A summary of {props.firstName} {props.lastName}'s account information.</span>
       <dl>
         <dt>Fixed monthly rent</dt>
-        <dd>xxx{props.quartersPrice}</dd>
+        <dd>{props.quartersPrice}</dd>
         <dt>Total payable</dt>
         <dd>{totalPayable}</dd>
         <dt>Current arrears</dt>

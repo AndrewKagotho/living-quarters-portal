@@ -14,8 +14,9 @@ header {
 }
 
 nav {
+  display: none;
   @include h_center_content;
-  top: 20px;
+  // top: 20px;
 
   ul {
     margin: 0;
@@ -28,9 +29,18 @@ nav {
   }
 }
 
+.welcome_text {
+  margin: 40px 0;
+  color: $grey;
+  text-shadow: 0 4px 3px $shadow;
+  text-align: center;
+  @include h_center_content;
+}
+
 menu {
   width: 20vw;
   margin: 0;
+  padding: 0 15px;
   
   h2 { margin-bottom: 20px; }
 

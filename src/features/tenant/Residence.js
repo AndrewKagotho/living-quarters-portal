@@ -8,17 +8,17 @@ const Residence = ({props}) => {
           <dt>Name:</dt>
           <dd>{props.firstName} {props.lastName}</dd>
           <dt>Residence:</dt>
-          <dd>xx{props.quartersName}</dd>
+          <dd>{props.quartersName}</dd>
           <dt>House No:</dt>
-          <dd>xx</dd>
+          <dd></dd>
         </dl>
         <dl className='dl_grid'>
           <dt>Tenancy:</dt>
-          <dd>xx{props.activity}</dd>
+          <dd>{props.activity}</dd>
           <dt>Location:</dt>
-          <dd>xx{props.quartersLocation}</dd>
+          <dd>{props.quartersLocation}</dd>
           <dt>Landlord:</dt>
-          <dd>xx{props.landlordFirstName} {props.landlordLastName}</dd>
+          <dd>{props.landlordFirstName} {props.landlordLastName}</dd>
         </dl>
       </div>
     </section>

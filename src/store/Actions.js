@@ -62,14 +62,15 @@ const addQuartersDetails = (x1,x2,x3,x4,x5) => {
   }
 }
 
-const addLandlordDetails = (x1,x2,x3,x4,x5) => {
+const addLandlordDetails = (x1,x2,x3,x4,x5,x6) => {
   return {
     type: 'U_ADD_LANDLORD_INFO',
-    firstName: x1,
-    lastName: x2,
-    email: x3,
-    phoneNo: x4,
-    payDetails: x5
+    username: x1,
+    firstName: x2,
+    lastName: x3,
+    email: x4,
+    phoneNo: x5,
+    payDetails: x6
   }
 }
 

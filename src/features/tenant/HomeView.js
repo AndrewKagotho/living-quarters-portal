@@ -75,7 +75,7 @@ const HomeView = ({props, contentView, profileView, setProfileView}) => {
               <span>{props.landlordFirstName} {props.landlordLastName} <em>(Landlord)</em></span>
           </ul>
         </menu>
-        <div className='card card_large'>
+        <div className='card_large'>
           <Messages />
         </div>
       </>

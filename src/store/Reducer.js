@@ -64,6 +64,7 @@ export const appReducer = (state = initialState, action) => {
         user: {
           ...state.user,
           landlord: {
+            username: action.username,
             firstName: action.firstName,
             lastName: action.lastName,
             email: action.email,

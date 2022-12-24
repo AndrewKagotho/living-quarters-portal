@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { populateState } from '../../utils/U_PopulateState'
 import { mapUserDispatchToProps } from '../../store/Actions'
 import { convertDateTime } from '../../utils/Date'
-import { getMessages } from '../../layouts/TenantNav'
+import { getMessages } from '../../utils/U_PopulateState'
 
 let sendMss = 'http://localhost/living-quarters-portal/src/php/sendMessage.php'
 
@@ -42,7 +42,7 @@ const Messages = (props) => {
   const messageBubble = props.messageTime.map((item, index) => {
     if(props.messageFrom[index]===props.username)
       return (
-        <li key={index} className='messageBubble myMessage'>
+        <li key={index} className='my_message'>
           <span>{props.messageBody[index]}</span>
           <span>
             {dateTime.timeStamp[index][0]}:{dateTime.timeStamp[index][1]} on {dateTime.dateStamp[index][2]} {dateTime.dateStampInText[index]}, {dateTime.dateStamp[index][0]}
@@ -51,7 +51,7 @@ const Messages = (props) => {
       )
     else
     return (
-      <li key={index} className='messageBubble'>
+      <li key={index}>
         <span>{props.messageBody[index]}</span>
         <span>
           {dateTime.timeStamp[index][0]}:{dateTime.timeStamp[index][1]} on {dateTime.dateStamp[index][2]} {dateTime.dateStampInText[index]}, {dateTime.dateStamp[index][0]}
@@ -61,8 +61,8 @@ const Messages = (props) => {
   })
 
   return (
-    <div className='messagesContainer'>
-      <div className='messagesDiv'>
+    <div className='messages_container'>
+      <div>
         <ul>{messageBubble}</ul>
       </div>
       <form onSubmit={handleSubmit} className='sendMessage'>

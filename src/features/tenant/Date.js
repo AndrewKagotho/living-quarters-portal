@@ -20,7 +20,7 @@ const Date = ({props}) => {
       <hr/>
       <section className='duration'>
         <span>Duration of tenancy...</span>
-        <span><em>Days: </em>1{dateDifference}</span>
+        <span><em>Days: </em>{dateDifference}</span>
         <span>(since {startDate.startDay} {startDate.startMonthText} {startDate.startYear})</span>
       </section>
     </>

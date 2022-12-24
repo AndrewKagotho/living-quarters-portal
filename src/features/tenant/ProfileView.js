@@ -15,19 +15,19 @@ const ProfileView = ({props, profileView, refArray}) => {
         <span className='description'>Personal tenant information.</span>
         <dl className='dl_grid'>
           <h3>Account:</h3>
-          <dt>Username</dt>
-          <dd>{props.username}</dd>
           <dt>Name</dt>
           <dd>{props.firstName} {props.lastName}</dd>
+          <dt>Username</dt>
+          <dd>{props.username}</dd>
         </dl>
         <dl className='dl_grid'>
           <h3>Contacts:</h3>
           <dt>Phone number</dt>
-          <dd>xx{props.phoneNo}</dd>
+          <dd>{props.phoneNo}</dd>
           <dt>Email</dt>
           <dd>{props.email}</dd>
           <dt>National ID</dt>
-          <dd>xx{props.nationalID}</dd>
+          <dd>{props.nationalID}</dd>
         </dl>
       </section>
     )
@@ -39,11 +39,11 @@ const ProfileView = ({props, profileView, refArray}) => {
         <dl className='dl_grid'>
           <h3>Contacts:</h3>
           <dt>Name</dt>
-          <dd>xx{props.landlordFirstName} {props.landlordLastName}</dd>
+          <dd>{props.landlordFirstName} {props.landlordLastName}</dd>
           <dt>Phone number</dt>
-          <dd>xx{props.phoneNo}</dd>
+          <dd>{props.landlordPhone}</dd>
           <dt>Email</dt>
-          <dd>{props.email}</dd>
+          <dd>{props.landlordEmail}</dd>
         </dl>
       </section>
     )

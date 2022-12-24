@@ -29,6 +29,7 @@ export const initialState = {
       date: []
     },
     landlord: {
+      username:"",
       firstName:"",
       lastName:"",
       email:"",
