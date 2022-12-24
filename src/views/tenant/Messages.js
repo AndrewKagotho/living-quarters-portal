@@ -6,7 +6,7 @@ import { mapUserDispatchToProps } from '../../store/Actions'
 import { convertDateTime } from '../../utils/Date'
 import { getMessages } from '../../layouts/TenantNav'
 
-let sendMss = 'http://localhost:8080/Students%20LQ%20Portal/src/php/sendMessage.php'
+let sendMss = 'http://localhost/living-quarters-portal/src/php/sendMessage.php'
 
 const Messages = (props) => {
   window.onload = () => {
@@ -61,33 +61,14 @@ const Messages = (props) => {
   })
 
   return (
-    <div>
-      <h1 className='backgroundArt'>Messages</h1>
-      <div className='container'>
-        <div className='tenantMain'>
-          <div className='menu'>
-            <h2>Conversations</h2>
-            <ul>
-              <li>
-                <span>{props.landlordFirstName} {props.landlordLastName} <em>(Landlord)</em></span>
-              </li>
-            </ul>
-          </div>
-          <div className='selectedMenuOption smallPadding'>
-            <div>
-              <div className='messagesContainer'>
-                <div className='messagesDiv'>
-                  <ul>{messageBubble}</ul>
-                </div>
-                <form onSubmit={handleSubmit} className='sendMessage'>
-                  <textarea value={mss.mssBody} placeholder='Type your message here...' ref={textArea} onChange={handleChange}></textarea>
-                  <button>Send</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className='messagesContainer'>
+      <div className='messagesDiv'>
+        <ul>{messageBubble}</ul>
       </div>
+      <form onSubmit={handleSubmit} className='sendMessage'>
+        <textarea value={mss.mssBody} placeholder='Type your message here...' ref={textArea} onChange={handleChange}></textarea>
+        <button>Send</button>
+      </form>
     </div>
   )
 }

@@ -22,7 +22,7 @@ const TenantNav = (props) => {
   return (
     <>
       <header>
-        <span>Students' Living Quarters Portal</span> 
+        <h1>Students' Living Quarters Portal</h1>
         <Link to='/'>Log out</Link>
       </header>
       <nav>

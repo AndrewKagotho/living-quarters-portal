@@ -19,19 +19,20 @@ const Home = (props) => {
   const overviewRef = React.useRef()
   const accountRef = React.useRef()
   const profileRef = React.useRef()
-  const refArray = [overviewRef, accountRef, profileRef]
+  const messagesRef = React.useRef()
+  const refArray = [overviewRef, accountRef, profileRef, messagesRef]
 
   const viewContent = (arg, num) => {
     setView({view: arg, num: num})
 
     for(let index=0; index<refArray.length; index++) {
       if(index===num) {
-        refArray[index].current.style.backgroundColor = 'var(--theme)'
-        refArray[index].current.style.color = 'var(--neutral)'
+        refArray[index].current.style.backgroundColor = 'hsl(190, 100%, 25%)'
+        refArray[index].current.style.color = '#FFF'
         continue
       }
       refArray[index].current.style.backgroundColor = 'transparent'
-      refArray[index].current.style.color = 'var(--font)'
+      refArray[index].current.style.color = '#555'
     }
   }
 
@@ -47,7 +48,7 @@ const Home = (props) => {
               <li onClick={() => viewContent('Overview', 0)} ref={overviewRef}>Overview</li>
               <li onClick={() => viewContent('Account', 1)} ref={accountRef}>Account</li>
               <li onClick={() => viewContent('Profile', 2)} ref={profileRef}>Profile</li>
-              <li onClick={() => viewContent('Messages', 3)} ref={profileRef}>Messages</li>
+              <li onClick={() => viewContent('Messages', 3)} ref={messagesRef}>Messages</li>
             </ul>
           </menu>
           <div className='container__content__selected'>

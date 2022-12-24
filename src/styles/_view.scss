@@ -7,8 +7,6 @@
   text-align: center;
 }
 
-// Overview
-
 .container {
   width: 90vw;
   @include h_center_content;
@@ -21,43 +19,114 @@
   justify-content: space-between;
 }
 
-menu {
-  width: 20vw;
-  margin: 0;
-  
-  h2 { padding-left: 0; }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid $theme;
-  }
-
-  li {
-    padding: 15px 20px;
-    color: $grey;
-    border-radius: 0 20px 20px 0;
-    transition: text-indent $animation;
-    cursor: default;
-
-    &:hover { text-indent: 10px; }
-  }
-}
-
 .container__content__selected {
   width: 67vw;
 
   & > div {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
   }
 }
 
-.smallContainer {
-  width: 20vw;
+.card {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #FFF;
+  box-shadow: 0 0 5px 1px $shadow;
+  padding-bottom: 15px;
+  transition: scale $animation;
+
+  &:hover { scale: $scale; }
+}
+
+.card_small { width: 20vw; }
+
+.card_large { width: 44vw; }
+
+.card_flex {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
+  
+  // & > * { @include bor; }
 }
 
-.largeContainer { width: 44vw; }
+.description {
+  font-size: $small_font;
+  color: $grey;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.section_account {
+  dl { margin: 0; }
+
+  dd {
+    margin-bottom: 10px;
+    &:last-child { margin: 0; }
+  }
+}
+
+.residence {
+  // @include bor;
+  // & > * { @include bor; }
+
+  img {
+    width: 100%;
+    height: 500px;
+  }
+
+  h2 { margin: 0; }
+}
+
+.residence__info {
+  display: flex;
+  gap: 50px;
+  translate: -25% 0;
+
+  dd {
+    text-align: left;
+    text-indent: 7px;
+  }
+
+  // & > * { @include bor; }
+}
+
+.date {
+  span {
+    display: block;
+    font-weight: 300;
+    
+    &:nth-child(2) {
+      font-size: $small_font;
+      font-weight: 500;
+    }
+
+    &:nth-child(3) { margin-top: 10px; }
+  }
+}
+
+.duration {
+  span {
+    display: block;
+    font-size: $small_font;
+
+    &:nth-child(2) {
+      font-size: $massive_font;
+      font-weight: 300;
+      text-align: right;
+      scale: 1.2;
+
+      em {
+        font-size: $small_font;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// Overview
+
+// Account

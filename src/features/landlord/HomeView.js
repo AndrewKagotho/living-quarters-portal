@@ -2,7 +2,6 @@ import React from 'react'
 import Stats from '../../features/landlord/Stats'
 import Listings from '../../features/landlord/Listings'
 import Date from '../../features/tenant/Date'
-import Calendar from '../../features/shared/Calendar'
 import AccountSummary from '../../features/landlord/AccountSummary'
 import ListingsSummary from '../../features/landlord/ListingsSummary'
 import Account from '../../features/landlord/Account'
@@ -38,7 +37,7 @@ const HomeView = ({props, contentView}) => {
         </div>
         <div className='component activeComponent smallContainer'>
           <div className='datePadding'><Date/></div>
-          <Calendar/>
+            Calendar
         </div>
       </div>
     )

@@ -3,14 +3,6 @@ header {
   height: 100px;
   box-shadow: 0 5px 5px #EEE;
   position: relative;
-
-  span {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: hsl(190, 100%, 25%);
-    @include center_content;
-    position: absolute;
-  }
   
   a {
     @include v_center_content;
@@ -34,6 +26,35 @@ nav {
     justify-content: center;
     gap: 50px;
   }
+}
+
+menu {
+  width: 20vw;
+  margin: 0;
+  
+  h2 { margin-bottom: 20px; }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid $theme;
+  }
+
+  li {
+    padding: 15px 20px;
+    color: $grey;
+    border-radius: 0 20px 20px 0;
+    transition: text-indent $animation;
+    cursor: default;
+
+    // &:first-child {
+    //   background-color: $theme !important;
+    //   color: #FFF !important;
+    // }
+    &:hover { text-indent: 10px; }
+  }
+
+  em { font-size: $small_font; }
 }
 
 .background_art {

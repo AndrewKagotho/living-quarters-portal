@@ -1,5 +1,6 @@
 .react-calendar {
-  transform: scaleX(.87) scaleY(.9);
+  scale: 1 .9;
+  /* border: 1px solid blue; */
 }
 .react-calendar--doubleView {
   width: 700px;

@@ -1,27 +1,27 @@
 const Residence = ({props}) => {
   return (
-    <div className='residence'>
-      <img src={props.quartersImage} alt='Residence'/>
-      <h2>Residence information</h2>
-      <div className='residenceInfo'>
-        <div>
-          <span>Name:</span>
-          <span>{props.firstName} {props.lastName}</span>
-          <span>Residence:</span>
-          <span>{props.quartersName}</span>
-          <span>House No:</span>
-          <span>###</span>
-        </div>
-        <div>
-          <span>Tenancy:</span>
-          <span>{props.activity}</span>
-          <span>Location:</span>
-          <span>{props.quartersLocation}</span>
-          <span>Landlord:</span>
-          <span>{props.landlordFirstName} {props.landlordLastName}</span>
-        </div>
+    <section className='residence'>
+      <img src={props.quartersImage} alt='residence'/>
+      <h2>Residence information:</h2>
+      <div className='residence__info'>
+        <dl className='dl_grid'>
+          <dt>Name:</dt>
+          <dd>{props.firstName} {props.lastName}</dd>
+          <dt>Residence:</dt>
+          <dd>xx{props.quartersName}</dd>
+          <dt>House No:</dt>
+          <dd>xx</dd>
+        </dl>
+        <dl className='dl_grid'>
+          <dt>Tenancy:</dt>
+          <dd>xx{props.activity}</dd>
+          <dt>Location:</dt>
+          <dd>xx{props.quartersLocation}</dd>
+          <dt>Landlord:</dt>
+          <dd>xx{props.landlordFirstName} {props.landlordLastName}</dd>
+        </dl>
       </div>
-    </div>
+    </section>
   )
 }
 

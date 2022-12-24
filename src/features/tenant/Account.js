@@ -1,35 +1,41 @@
 const Account = ({props}) => {
-  let prevBalance = 1200
+  let prevBalance = 0
   let totalPayable = prevBalance + parseInt(props.quartersPrice)
   let currentBalance = totalPayable - props.paid[0]
 
   return (
-    <div>
+    <section>
       <h2>Account information</h2>
       <span className='description'>Detailed insights into {props.firstName} {props.lastName}'s tenancy account.</span>
-      <div className='grid'>
+      <dl className='dl_grid'>
         <h3>Contract agreement:</h3>
-        <span className='gridLabel'>Type</span>
-        <span className='gridValue'>{props.agreementType}</span>
-        <span className='gridLabel'>Period</span>
-        <span className='gridValue'>{props.period}</span>
-        <span className='gridLabel'>Fixed monthly rent</span>
-        <span className='gridValue emCurrency'>{props.quartersPrice}</span>
+        <dt>Type</dt>
+        <dd>xx{props.agreementType}</dd>
+        <dt>Period</dt>
+        <dd>xx{props.period}</dd>
+        <dt>Fixed monthly rent</dt>
+        <dd>xx{props.quartersPrice}</dd>
+      </dl>
+      <dl className='dl_grid'>
         <h3>Balances:</h3>
-        <span className='gridLabel'>Previous balance*</span>
-        <span className='gridValue currency'>{prevBalance}</span>
-        <span className='gridLabel'>Monthly rent</span>
-        <span className='gridValue currency'>{props.quartersPrice}</span>
-        <hr/>
-        <span className='gridLabel'>Total payable*</span>
-        <span className='gridValue emCurrency'>{totalPayable}</span>
-        <span className='gridLabel'>Amount paid</span>
-        <span className='gridValue currency'>{props.paid[0]}</span>
-        <hr/>
-        <span className='gridLabel'>Current arrears*</span>
-        <span className='gridValue emCurrency'>{currentBalance}</span>
-      </div>
-    </div>
+        <dt>Previous balance*</dt>
+        <dd>xx{prevBalance}</dd>
+        <dt>Monthly rent</dt>
+        <dd>xx{props.quartersPrice}</dd>
+      </dl>
+      <hr/>
+      <dl className='dl_grid'>
+        <dt>Total payable*</dt>
+        <dd>{totalPayable}</dd>
+        <dt>Amount paid</dt>
+        <dd>xx{props.paid[0]}</dd>
+      </dl>
+      <hr/>
+      <dl className='dl_grid'>
+        <dt>Current arrears*</dt>
+        <dd>{currentBalance}</dd>
+      </dl>
+    </section>
   )
 }
 

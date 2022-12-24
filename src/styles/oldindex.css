@@ -9,7 +9,7 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
-:root {
+/* :root {
   --theme: hsl(190, 100%, 25%);
   --lightTheme: hsl(190, 100%, 32%);
   --greyHover: #F3F3F3;
@@ -21,7 +21,7 @@ body {
   --mediumFont: 1.2rem;
   --largeFont: 1.6rem;
   --massiveFont: 4rem;
-}
+} */
 .smallFont {
   font-size: var(--smallFont);
 }

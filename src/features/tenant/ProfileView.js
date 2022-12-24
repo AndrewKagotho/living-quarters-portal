@@ -8,42 +8,44 @@ const ProfileView = ({props, profileView, refArray}) => {
     // eslint-disable-next-line
   }, [])
 
-  if(profileView.view==='Personal')
+  if(profileView.view === 'Personal')
     return (
-      <div>
+      <section>
         <h2>My profile</h2>
-        <span className='smallFont description'>Personal tenant information.</span>
-        <div className='grid'>
+        <span className='description'>Personal tenant information.</span>
+        <dl className='dl_grid'>
           <h3>Account:</h3>
-          <span className='gridLabel'>Username</span>
-          <span className='gridValue'>{props.username}</span>
-          <span className='gridLabel'>Name</span>
-          <span className='gridValue'>{props.firstName} {props.lastName}</span>
+          <dt>Username</dt>
+          <dd>{props.username}</dd>
+          <dt>Name</dt>
+          <dd>{props.firstName} {props.lastName}</dd>
+        </dl>
+        <dl className='dl_grid'>
           <h3>Contacts:</h3>
-          <span className='gridLabel'>Phone number</span>
-          <span className='gridValue phoneNo'>{props.phoneNo}</span>
-          <span className='gridLabel'>Email</span>
-          <span className='gridValue'>{props.email}</span>
-          <span className='gridLabel'>National ID</span>
-          <span className='gridValue'>{props.nationalID}</span>
-        </div>
-      </div>
+          <dt>Phone number</dt>
+          <dd>xx{props.phoneNo}</dd>
+          <dt>Email</dt>
+          <dd>{props.email}</dd>
+          <dt>National ID</dt>
+          <dd>xx{props.nationalID}</dd>
+        </dl>
+      </section>
     )
-  else if(profileView.view==='Landlord')
+  else if(profileView.view === 'Landlord')
     return (
-      <div>
+      <section>
         <h2>Landlord's profile</h2>
         <span className='smallFont description'>Important landlord information.</span>
-        <div className='grid'>
+        <dl className='dl_grid'>
           <h3>Contacts:</h3>
-          <span className='gridLabel'>Name</span>
-          <span className='gridValue'>{props.landlordFirstName} {props.landlordLastName}</span>
-          <span className='gridLabel'>Phone number</span>
-          <span className='gridValue phoneNo'>{props.landlordPhone}</span>
-          <span className='gridLabel'>Email</span>
-          <span className='gridValue'>{props.landlordEmail}</span>
-        </div>
-      </div>
+          <dt>Name</dt>
+          <dd>xx{props.landlordFirstName} {props.landlordLastName}</dd>
+          <dt>Phone number</dt>
+          <dd>xx{props.phoneNo}</dd>
+          <dt>Email</dt>
+          <dd>{props.email}</dd>
+        </dl>
+      </section>
     )
 
   return <div>Nothing to show...</div>

@@ -6,7 +6,7 @@
 }
 .today span:nth-child(2) { margin-top: 8px; }
 .today span:nth-child(2), .today span:nth-child(3) { font-weight: 300; }
-.duration span:nth-child(2) {
+/* .duration span:nth-child(2) {
   font-size: var(--massiveFont);
   font-weight: 300;
   color: var(--theme);
@@ -17,4 +17,4 @@
 .duration em {
   font-size: var(--smallFont);
   font-weight: 400;
-}
+} */

@@ -1,18 +1,29 @@
+import { getStartDate } from '../../utils/Date'
 import { getCurrentDate } from '../../utils/Date'
-import '../../styles/dates.css'
+import { getDateDifference } from '../../utils/Date'
 
-const Date = () => {
+const Date = ({props}) => {
+
   const dateToday = getCurrentDate()
+  const startDate = getStartDate(props)
+  const currentDate = getCurrentDate()
+  const dateDifference = getDateDifference(startDate, currentDate)
 
   return (
-    <div className='today'>
-      <h2>Date manenoz</h2>
-      <div>
-        <span className='smallFont'>Today...</span>
-        <span className='mediumFont'>{dateToday.currentDayInText}</span>
-        <span className='mediumFont'>{dateToday.currentDate} {dateToday.currentMonthInText}, {dateToday.currentYear}</span>
-      </div>
-    </div>
+    <>
+      <section className='date'>
+        <h2>Dates</h2>
+        <span>Today...</span>
+        <span>{dateToday.currentDayInText}</span>
+        <span>{dateToday.currentDate} {dateToday.currentMonthInText}, {dateToday.currentYear}</span>
+      </section>
+      <hr/>
+      <section className='duration'>
+        <span>Duration of tenancy...</span>
+        <span><em>Days: </em>1{dateDifference}</span>
+        <span>(since {startDate.startDay} {startDate.startMonthText} {startDate.startYear})</span>
+      </section>
+    </>
   )
 }
 
